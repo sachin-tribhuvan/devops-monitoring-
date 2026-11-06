@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Local DevOps Monitor</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <h1>DevOps Monitor</h1>
+            <p>Local System Monitoring Dashboard</p>
+        </div>
+
+        <div class="status">
+            <span class="dot"></span>
+            System Online
+        </div>
+    </header>
+
+    <main>
+
+        <section class="welcome">
+            <h2>System Overview</h2>
+            <p>Monitor your computer performance in real time.</p>
+        </section>
+
+        <section class="cards">
+
+            <div class="card">
+                <h3>CPU Usage</h3>
+                <div class="value" id="cpu">--%</div>
+
+                <div class="progress">
+                    <div id="cpu-bar"></div>
+                </div>
+
+                <p id="cores">Loading cores...</p>
+            </div>
+
+            <div class="card">
+                <h3>RAM Usage</h3>
+                <div class="value" id="ram">--%</div>
+
+                <div class="progress">
+                    <div id="ram-bar"></div>
+                </div>
+
+                <p id="ram-details">Loading memory...</p>
+            </div>
+
+            <div class="card">
+                <h3>Disk Usage</h3>
+                <div class="value" id="disk">--%</div>
+
+                <div class="progress">
+                    <div id="disk-bar"></div>
+                </div>
+
+                <p id="disk-details">Loading disk...</p>
+            </div>
+
+        </section>
+
+        <section class="info">
+    <h2>Monitoring History</h2>
+    <p>Last 20 system monitoring records</p>
+
+    <div class="chart-container">
+        <h3>CPU Usage History</h3>
+        <canvas id="cpuChart" width="800" height="250"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h3>RAM Usage History</h3>
+        <canvas id="ramChart" width="800" height="250"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h3>Disk Usage History</h3>
+        <canvas id="diskChart" width="800" height="250"></canvas>
+    </div>
+</section>
+
+        <section class="info">
+
+            <h2>System Information</h2>
+
+            <div class="info-grid">
+
+                <p>Hostname:
+                    <strong id="hostname">Loading...</strong>
+                </p>
+
+                <p>Operating System:
+                    <strong id="os">Loading...</strong>
+                </p>
+
+                <p>OS Version:
+                    <strong id="version">Loading...</strong>
+                </p>
+
+                <p>Python Version:
+                    <strong id="python">Loading...</strong>
+                </p>
+
+                <p>Processor:
+                    <strong id="processor">Loading...</strong>
+                </p>
+
+                <p>System Uptime:
+                    <strong id="uptime">Loading...</strong>
+                </p>
+
+            </div>
+
+        </section>
+
+        <footer>
+            <p>Local DevOps Monitoring & Automation System</p>
+            <p>Auto refresh: Every 2 seconds</p>
+        </footer>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+</html>
